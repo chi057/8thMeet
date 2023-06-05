@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_8thMeet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Clock" Height="450" Width="800" Icon="clock.png">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="lejdl-3mvt7.png"/>
+        </Grid.Background>
+        <TextBox x:Name="TxtTime" HorizontalAlignment="Center" Height="97" Margin="10,10,9.6,313" TextWrapping="Wrap" VerticalAlignment="Center" Width="774" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="72"/>
+        <TextBox x:Name="TxtWeekDay" HorizontalAlignment="Center" Height="97" Margin="474,112,9.6,211" TextWrapping="Wrap" VerticalAlignment="Center" Width="310" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36"/>
+        <TextBox x:Name="TxtDate" HorizontalAlignment="Center" Height="97" Margin="10,112,324.6,211" TextWrapping="Wrap" VerticalAlignment="Center" Width="459" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36"/>
+        <Button x:Name="BtnSetAlert" Content="設定鬧鐘" HorizontalAlignment="Center" Margin="10,222,657.6,149" VerticalAlignment="Center" Width="126" RenderTransformOrigin="-0.804,0.24" Height="49"/>
+        <ComboBox x:Name="CmbHour" HorizontalAlignment="Center" Margin="277,222,431.6,163" VerticalAlignment="Center" Width="85" Height="35"/>
+        <ComboBox x:Name="CmbMin" HorizontalAlignment="Center" Margin="367,222,341.6,163" VerticalAlignment="Center" Width="85" Height="35"/>
+        <MediaElement x:Name="MeSound" HorizontalAlignment="Left" Height="160" Margin="556,233,0,0" VerticalAlignment="Top" Width="160" Source="alert.wav" Volume="1"/>
+        <Button x:Name="BtnSetAlert_Copy" Content="取消鬧鐘" HorizontalAlignment="Center" Margin="141,222,526.6,149" VerticalAlignment="Center" Width="126" RenderTransformOrigin="-0.804,0.24" Height="49"/>
+
     </Grid>
 </Window>

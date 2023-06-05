@@ -94,5 +94,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="alert.wav" />
+    <Resource Include="lejdl-3mvt7.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
