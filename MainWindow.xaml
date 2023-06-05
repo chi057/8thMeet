@@ -18,6 +18,7 @@
         <ComboBox x:Name="CmbMin" HorizontalAlignment="Center" Margin="371,361,337.6,24" VerticalAlignment="Center" Width="85" Height="35" VerticalContentAlignment="Center" FontSize="16"/>
         <MediaElement x:Name="MeSound" HorizontalAlignment="Left" Height="32" Margin="461,361,0,0" VerticalAlignment="Top" Width="32" Source="alert.wav" Volume="1"/>
         <Button x:Name="BtnCancelAlert" Content="取消鬧鐘" HorizontalAlignment="Center" Margin="145,361,522.6,10" VerticalAlignment="Center" Width="126" RenderTransformOrigin="-0.804,0.24" Height="49" FontSize="18" Click="BtnCancelAlert_Click" Background="#FFC0BABA"/>
+        <Label Content="圖源:https://reurl.cc/M8b6VX" HorizontalAlignment="Left" Margin="611,384,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
