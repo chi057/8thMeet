@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="alert.wav" />
+    <Resource Include="tire.png" />
     <Resource Include="lejdl-3mvt7.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
