@@ -18,9 +18,21 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="ginw6xou99p21.jpg" Stretch="UniformToFill"/>
                     </Grid.Background>
-                    <TextBox x:Name="TxtTime" HorizontalAlignment="Center" Height="90" Margin="373,42,19,261" TextWrapping="Wrap" VerticalAlignment="Center" Width="340" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="72" Background="#00808080" Foreground="White" BorderBrush="Transparent" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="TxtWeekDay" HorizontalAlignment="Center" Height="64" Margin="223,56,212.2,273" TextWrapping="Wrap" VerticalAlignment="Center" Width="132" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" Background="Transparent" Grid.Column="1" BorderBrush="Transparent" FontWeight="Bold" Foreground="White"/>
-                    <TextBox x:Name="TxtDate" HorizontalAlignment="Right" Height="64" Margin="0,56,330.2,273" TextWrapping="Wrap" VerticalAlignment="Center" Width="236" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Foreground="White" Grid.Column="1"/>
+                    <TextBox x:Name="TxtTime" HorizontalAlignment="Center" Height="90" Margin="355,56,37,247" TextWrapping="Wrap" VerticalAlignment="Center" Width="340" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="72" Background="#00808080" Foreground="White" BorderBrush="Transparent" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="2" Focusable="False">
+                        <TextBox.Effect>
+                            <DropShadowEffect/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <TextBox x:Name="TxtWeekDay" HorizontalAlignment="Center" Height="64" Margin="223,67,212.2,262" TextWrapping="Wrap" VerticalAlignment="Center" Width="132" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" Background="Transparent" Grid.Column="1" BorderBrush="Transparent" FontWeight="Bold" Foreground="White" Focusable="False">
+                        <TextBox.Effect>
+                            <DropShadowEffect/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <TextBox x:Name="TxtDate" HorizontalAlignment="Right" Height="64" Margin="0,67,331.2,262" TextWrapping="Wrap" VerticalAlignment="Center" Width="236" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Foreground="White" Grid.Column="1" Focusable="False">
+                        <TextBox.Effect>
+                            <DropShadowEffect/>
+                        </TextBox.Effect>
+                    </TextBox>
                     <Button x:Name="BtnSetAlert" Content="設定鬧鐘" HorizontalAlignment="Center" Margin="14,336,483.533,10.8" VerticalAlignment="Center" Width="125" RenderTransformOrigin="-0.804,0.24" Height="46" FontSize="18" Click="BtnSetAlert_Click" Background="#FFC0BABA" Grid.ColumnSpan="2" FontWeight="Bold"/>
                     <ComboBox x:Name="CmbHour" HorizontalAlignment="Center" Margin="223,336,259.533,23.8" VerticalAlignment="Center" Width="84" Height="33" VerticalContentAlignment="Center" FontSize="16" Grid.Column="1" FontWeight="Bold"/>
                     <ComboBox x:Name="CmbMin" HorizontalAlignment="Center" Margin="312,336,169.533,23.8" VerticalAlignment="Center" Width="85" Height="33" VerticalContentAlignment="Center" FontSize="16" Grid.Column="1" FontWeight="Bold"/>
@@ -41,23 +53,36 @@
                     <Button x:Name="BtnLog" Content="紀錄" HorizontalAlignment="Left" Height="47" Margin="578,310,0,0" VerticalAlignment="Top" Width="97" FontWeight="Bold" Click="BtnLog_Click" FontSize="16" Background="#FFC0BABA"/>
                     <Button x:Name="BtnStop" Content="停止並歸零" HorizontalAlignment="Left" Height="47" Margin="680,310,0,0" VerticalAlignment="Top" Width="98" Background="#FFF31212" Click="BtnStop_Click" FontSize="16" FontWeight="Bold"/>
                     <TextBox x:Name="TxtStopWatchLog" HorizontalAlignment="Center" Height="299" Margin="10,38,541,55.8" TextWrapping="Wrap" VerticalAlignment="Center" Width="237" FontSize="18" Background="Transparent" HorizontalContentAlignment="Center" Foreground="White" FontWeight="Bold" BorderBrush="Transparent"/>
-                    <TextBox x:Name="TxtStopWatch" HorizontalAlignment="Center" Height="100" Margin="259,31,11,261.8" TextWrapping="Wrap" Text="00:00:00:000" VerticalAlignment="Center" Width="518" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="72" Background="Transparent" Foreground="White" FontWeight="Bold" BorderBrush="Transparent"/>
+                    <TextBox x:Name="TxtStopWatch" HorizontalAlignment="Center" Height="100" Margin="259,31,11,261.8" TextWrapping="Wrap" Text="00:00:00:000" VerticalAlignment="Center" Width="518" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="72" Background="Transparent" Foreground="White" FontWeight="Bold" BorderBrush="Transparent">
+                        <TextBox.Effect>
+                            <DropShadowEffect/>
+                        </TextBox.Effect>
+                    </TextBox>
                 </Grid>
             </TabItem>
             <TabItem Header="倒數" Margin="0,0,-4,-1.8">
-                <Grid Opacity="0.8" Margin="1,0,-1,-0.4">
+                <Grid Opacity="0.8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="12"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
                     <Grid.Background>
                         <ImageBrush ImageSource="AnyConv.com__1_6.jpg" Stretch="UniformToFill"/>
                     </Grid.Background>
-                    <Label Content="圖源:https://reurl.cc/112yLV" HorizontalAlignment="Left" Margin="613,357,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="TxtCountDown" HorizontalAlignment="Left" Height="93" Margin="122,10,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Width="321" FontSize="72" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <ComboBox x:Name="CmbCountHour" HorizontalAlignment="Left" Margin="576,24,0,0" VerticalAlignment="Top" Width="58" Height="27"/>
-                    <ComboBox x:Name="CmbCountSecond" HorizontalAlignment="Left" Margin="702,24,0,0" VerticalAlignment="Top" Width="58" Height="27"/>
-                    <ComboBox x:Name="CmbCountMin" HorizontalAlignment="Left" Margin="639,24,0,0" VerticalAlignment="Top" Width="58" Height="27"/>
-                    <Button x:Name="BtnCountStart" Content="開始倒數" HorizontalAlignment="Left" Height="47" Margin="629,100,0,0" VerticalAlignment="Top" Width="101" FontSize="16" FontWeight="Bold" Click="BtnCountStart_Click"/>
-                    <Button x:Name="BtnCountStop" Content="停止" HorizontalAlignment="Left" Height="47" Margin="629,239,0,0" VerticalAlignment="Top" Width="101" FontSize="16" Background="Red" FontWeight="Bold" Click="BtnCountStop_Click"/>
-                    <Button x:Name="BtnCountPause" Content="暫停" HorizontalAlignment="Left" Height="47" Margin="629,170,0,0" VerticalAlignment="Top" Width="101" FontSize="16" Background="#FFFFEE00" FontWeight="Bold" Click="BtnCountPause_Click"/>
-                    <MediaElement x:Name="MeCountDown" HorizontalAlignment="Left" Height="79" Margin="73,295,0,0" VerticalAlignment="Top" Width="82" Source="alert.wav" Volume="1"/>
+                    <Label Content="圖源:https://reurl.cc/112yLV" HorizontalAlignment="Left" Margin="600.733,357,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBox x:Name="TxtCountDown" HorizontalAlignment="Left" Height="93" Margin="98,10,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Width="339" FontSize="72" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" BorderBrush="#00ABADB3" Foreground="Red" Grid.Column="1" Focusable="False">
+                        <TextBox.Effect>
+                            <DropShadowEffect/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <ComboBox x:Name="CmbCountHour" HorizontalAlignment="Left" Margin="563.733,24,0,0" VerticalAlignment="Top" Width="58" Height="27" Grid.Column="1"/>
+                    <ComboBox x:Name="CmbCountSecond" HorizontalAlignment="Left" Margin="689.733,24,0,0" VerticalAlignment="Top" Width="58" Height="27" Grid.Column="1"/>
+                    <ComboBox x:Name="CmbCountMin" HorizontalAlignment="Left" Margin="626.733,24,0,0" VerticalAlignment="Top" Width="58" Height="27" Grid.Column="1"/>
+                    <Button x:Name="BtnCountStart" Content="開始倒數" HorizontalAlignment="Left" Height="47" Margin="607,131,0,0" VerticalAlignment="Top" Width="110" FontSize="16" FontWeight="Bold" Click="BtnCountStart_Click" Grid.Column="1" Background="#FFC0BABA"/>
+                    <Button x:Name="BtnCountStop" Content="停止" HorizontalAlignment="Left" Height="47" Margin="607,252,0,0" VerticalAlignment="Top" Width="110" FontSize="16" Background="Red" FontWeight="Bold" Click="BtnCountStop_Click" Grid.Column="1"/>
+                    <Button x:Name="BtnCountPause" Content="暫停/繼續" HorizontalAlignment="Left" Height="47" Margin="607,191,0,0" VerticalAlignment="Top" Width="110" FontSize="16" Background="#FFFFEE00" FontWeight="Bold" Click="BtnCountPause_Click" Grid.Column="1"/>
+                    <MediaElement x:Name="MeCountDown" HorizontalAlignment="Left" Height="79" Margin="60.733,295,0,0" VerticalAlignment="Top" Width="82" Source="alert.wav" Volume="1" Grid.Column="1" MediaEnded="MeCountDown_MediaEnded" Opacity="0"/>
+                    <TextBox x:Name="Txtshow" HorizontalAlignment="Left" Height="47" Margin="607,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Grid.Column="1" FontSize="14"/>
                 </Grid>
             </TabItem>
         </TabControl>

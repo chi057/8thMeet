@@ -99,7 +99,9 @@ namespace _8thMeet
             {
                 MeCountDown.LoadedBehavior = MediaState.Play;
                 timerCountDown.Stop();
+                Txtshow.Text = "倒數完成";
             }
+
         }
         private void BtnSetAlert_Click(object sender, RoutedEventArgs e)
         {
@@ -186,21 +188,39 @@ namespace _8thMeet
 
         private void BtnCountStart_Click(object sender, RoutedEventArgs e)
         {
-            if (isCountDownReset == true)
+            if (CmbCountHour.SelectedItem != null && CmbCountMin.SelectedItem != null && CmbCountSecond.SelectedItem != null)
             {
                 int Hour = int.Parse(CmbCountHour.SelectedItem.ToString());
                 int Min = int.Parse(CmbCountMin.SelectedItem.ToString());
                 int Sec = int.Parse(CmbCountSecond.SelectedItem.ToString());
                 ts = new TimeSpan(Hour, Min, Sec);
+
+                isCountDownReset = false;
+                timerCountDown.Start();
+                Txtshow.Text = "倒數中...";
             }
-            isCountDownReset = false;
-            timerCountDown.Start();
+            else
+            {
+                Txtshow.Text = "請選擇倒數時間";
+            }
         }
+        private bool isCountDownPaused = false;
         private void BtnCountPause_Click(object sender, RoutedEventArgs e)
         {
-
-            timerCountDown.Stop();
+            if (isCountDownPaused)
+            {
+                timerCountDown.Start();
+                isCountDownPaused = false;
+                Txtshow.Text = "繼續倒數...";
+            }
+            else
+            {
+                timerCountDown.Stop();
+                isCountDownPaused = true;
+                Txtshow.Text = "暫停中...";
+            }
         }
+    
         private void BtnCountStop_Click(object sender, RoutedEventArgs e)
         {
             MeCountDown.LoadedBehavior = MediaState.Stop;
@@ -210,6 +230,13 @@ namespace _8thMeet
             CmbCountHour.SelectedIndex = -1;
             CmbCountMin.SelectedIndex = -1;
             CmbCountSecond.SelectedIndex = -1;
+            Txtshow.Text = "";
+        }
+
+        private void MeCountDown_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            MeCountDown.Position = new TimeSpan(0, 0, 1);
+            MeCountDown.LoadedBehavior = MediaState.Play;
         }
     }
 }
