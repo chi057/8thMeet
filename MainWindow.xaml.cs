@@ -119,11 +119,11 @@ namespace _8thMeet
                 if (StopWatchLog.Count == 50)
                     StopWatchLog.RemoveAt(0);
                 StopWatchLog.Add(TxtStopWatch.Text);
-                int i = 1;
-                while (i <= StopWatchLog.Count)
+                int i = StopWatchLog.Count;
+                while (i > 0)
                 {
-                    TxtStopWatchLog.Text += String.Format("第 {0} 筆紀錄：{1}", i.ToString(), StopWatchLog[StopWatchLog.Count - 1] + "\n");
-                    i++;
+                    TxtStopWatchLog.Text += String.Format("第 {0} 筆紀錄：{1}", i.ToString(), StopWatchLog[i - 1] + "\n");
+                    i--;
                 }
                 sw.Restart();
             }
@@ -147,11 +147,11 @@ namespace _8thMeet
                 StopWatchLog.RemoveAt(0);
             StopWatchLog.Add(TxtStopWatch.Text);
 
-            int i = 1;
-            while (i <= StopWatchLog.Count)
+            int i = StopWatchLog.Count;
+            while (i > 0)
             {
-                TxtStopWatchLog.Text += String.Format("第 {0} 筆紀錄：{1}", i.ToString(), StopWatchLog[StopWatchLog.Count - 1] + "\n");
-                i++;
+                TxtStopWatchLog.Text += String.Format("第 {0} 筆紀錄：{1}", i.ToString(), StopWatchLog[i - 1] + "\n");
+                i--;
             }
         }
     }
