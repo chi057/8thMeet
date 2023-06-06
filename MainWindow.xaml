@@ -9,7 +9,7 @@
     <Grid Opacity="0.9">
         <TabControl HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
             <TabItem Header="時鐘">
-                <Grid Opacity="0.9" Margin="-6,-9,6,8.8">
+                <Grid Opacity="0.8" Margin="-6,-9,6,8.8">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="56*"/>
                         <ColumnDefinition Width="567*"/>
@@ -18,13 +18,13 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="ginw6xou99p21.jpg" Stretch="UniformToFill"/>
                     </Grid.Background>
-                    <TextBox x:Name="TxtTime" HorizontalAlignment="Center" Height="90" Margin="373,42,19,261" TextWrapping="Wrap" VerticalAlignment="Center" Width="340" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="72" Background="Transparent" Foreground="White" BorderBrush="Transparent" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="TxtTime" HorizontalAlignment="Center" Height="90" Margin="373,42,19,261" TextWrapping="Wrap" VerticalAlignment="Center" Width="340" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="72" Background="#00808080" Foreground="White" BorderBrush="Transparent" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="TxtWeekDay" HorizontalAlignment="Center" Height="64" Margin="223,56,212.2,273" TextWrapping="Wrap" VerticalAlignment="Center" Width="132" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" Background="Transparent" Grid.Column="1" BorderBrush="Transparent" FontWeight="Bold" Foreground="White"/>
                     <TextBox x:Name="TxtDate" HorizontalAlignment="Right" Height="64" Margin="0,56,330.2,273" TextWrapping="Wrap" VerticalAlignment="Center" Width="236" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Foreground="White" Grid.Column="1"/>
                     <Button x:Name="BtnSetAlert" Content="設定鬧鐘" HorizontalAlignment="Center" Margin="14,336,483.533,10.8" VerticalAlignment="Center" Width="125" RenderTransformOrigin="-0.804,0.24" Height="46" FontSize="18" Click="BtnSetAlert_Click" Background="#FFC0BABA" Grid.ColumnSpan="2" FontWeight="Bold"/>
                     <ComboBox x:Name="CmbHour" HorizontalAlignment="Center" Margin="223,336,259.533,23.8" VerticalAlignment="Center" Width="84" Height="33" VerticalContentAlignment="Center" FontSize="16" Grid.Column="1" FontWeight="Bold"/>
                     <ComboBox x:Name="CmbMin" HorizontalAlignment="Center" Margin="312,336,169.533,23.8" VerticalAlignment="Center" Width="85" Height="33" VerticalContentAlignment="Center" FontSize="16" Grid.Column="1" FontWeight="Bold"/>
-                    <MediaElement x:Name="MeSound" HorizontalAlignment="Left" Height="30" Margin="402,336,0,0" VerticalAlignment="Top" Width="31" Source="alert.wav" Volume="1" Grid.Column="1"/>
+                    <MediaElement x:Name="MeSound" HorizontalAlignment="Left" Height="30" Margin="402,336,0,0" VerticalAlignment="Top" Width="31" Source="alert.wav" Volume="1" Grid.Column="1" MediaEnded="MeSound_MediaEnded"/>
                     <Button x:Name="BtnCancelAlert" Content="取消鬧鐘" HorizontalAlignment="Center" Margin="88,336,353.533,10.8" VerticalAlignment="Center" Width="125" RenderTransformOrigin="-0.804,0.24" Height="46" FontSize="18" Click="BtnCancelAlert_Click" Background="#FFC0BABA" Grid.Column="1" FontWeight="Bold"/>
                     <Label Content="https://reurl.cc/ZWr0q6" HorizontalAlignment="Left" Margin="550,357,0,0" VerticalAlignment="Top" Height="24" Width="172" Grid.Column="1" Grid.ColumnSpan="2"/>
                 </Grid>

@@ -89,11 +89,7 @@ namespace _8thMeet
             BtnSetAlert.IsEnabled = true;
             BtnCancelAlert.IsEnabled = false;
         }
-        private void meSound_MediaEnded(object sender, RoutedEventArgs e)
-        {
-            MeSound.Position = new TimeSpan(0, 0, 1);
-            MeSound.LoadedBehavior = MediaState.Play;
-        }
+        
 
         private void BtnStart_Click(object sender, RoutedEventArgs e)
         {
@@ -153,6 +149,12 @@ namespace _8thMeet
                 TxtStopWatchLog.Text += String.Format("第 {0} 筆紀錄：{1}", i.ToString(), StopWatchLog[i - 1] + "\n");
                 i--;
             }
+        }
+
+        private void MeSound_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            MeSound.Position = new TimeSpan(0, 0, 1);
+            MeSound.LoadedBehavior = MediaState.Play;
         }
     }
 }
