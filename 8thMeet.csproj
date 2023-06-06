@@ -98,6 +98,8 @@
     <Resource Include="clock.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="6-83097519_2617927634928939_4616747306673242112_o-M.jpg" />
+    <Resource Include="2-IMG_0203-M.jpg" />
     <Content Include="alert.wav" />
     <Resource Include="tire.png" />
     <Resource Include="lejdl-3mvt7.png" />
