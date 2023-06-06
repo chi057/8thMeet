@@ -26,7 +26,7 @@
                     <ComboBox x:Name="CmbMin" HorizontalAlignment="Center" Margin="312,336,169.533,23.8" VerticalAlignment="Center" Width="85" Height="33" VerticalContentAlignment="Center" FontSize="16" Grid.Column="1" FontWeight="Bold"/>
                     <MediaElement x:Name="MeSound" HorizontalAlignment="Left" Height="30" Margin="402,336,0,0" VerticalAlignment="Top" Width="31" Source="alert.wav" Volume="1" Grid.Column="1" MediaEnded="MeSound_MediaEnded"/>
                     <Button x:Name="BtnCancelAlert" Content="取消鬧鐘" HorizontalAlignment="Center" Margin="88,336,353.533,10.8" VerticalAlignment="Center" Width="125" RenderTransformOrigin="-0.804,0.24" Height="46" FontSize="18" Click="BtnCancelAlert_Click" Background="#FFC0BABA" Grid.Column="1" FontWeight="Bold"/>
-                    <Label Content="https://reurl.cc/ZWr0q6" HorizontalAlignment="Left" Margin="550,357,0,0" VerticalAlignment="Top" Height="24" Width="172" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Label Content="圖源:https://reurl.cc/ZWr0q6" HorizontalAlignment="Left" Margin="551,352,0,0" VerticalAlignment="Top" Height="24" Width="171" Grid.Column="1" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
             <TabItem Header="碼表">
@@ -44,12 +44,20 @@
                     <TextBox x:Name="TxtStopWatch" HorizontalAlignment="Center" Height="100" Margin="259,31,11,261.8" TextWrapping="Wrap" Text="00:00:00:000" VerticalAlignment="Center" Width="518" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="72" Background="Transparent" Foreground="White" FontWeight="Bold" BorderBrush="Transparent"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="倒數" Margin="-1,0,-3,-1.8">
-                <Grid Opacity="0.9">
+            <TabItem Header="倒數" Margin="0,0,-4,-1.8">
+                <Grid Opacity="0.8" Margin="1,0,-1,-0.4">
                     <Grid.Background>
-                        <ImageBrush ImageSource="2-IMG_0203-M.jpg" Stretch="UniformToFill"/>
+                        <ImageBrush ImageSource="AnyConv.com__1_6.jpg" Stretch="UniformToFill"/>
                     </Grid.Background>
-                    <Label Content="圖源:https://reurl.cc/nDEp6v" HorizontalAlignment="Left" Margin="613,357,0,0" VerticalAlignment="Top"/>
+                    <Label Content="圖源:https://reurl.cc/112yLV" HorizontalAlignment="Left" Margin="613,357,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="TxtCountDown" HorizontalAlignment="Left" Height="93" Margin="122,10,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Width="321" FontSize="72" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <ComboBox x:Name="CmbCountHour" HorizontalAlignment="Left" Margin="576,24,0,0" VerticalAlignment="Top" Width="58" Height="27"/>
+                    <ComboBox x:Name="CmbCountSecond" HorizontalAlignment="Left" Margin="702,24,0,0" VerticalAlignment="Top" Width="58" Height="27"/>
+                    <ComboBox x:Name="CmbCountMin" HorizontalAlignment="Left" Margin="639,24,0,0" VerticalAlignment="Top" Width="58" Height="27"/>
+                    <Button x:Name="BtnCountStart" Content="開始倒數" HorizontalAlignment="Left" Height="47" Margin="629,100,0,0" VerticalAlignment="Top" Width="101" FontSize="16" FontWeight="Bold" Click="BtnCountStart_Click"/>
+                    <Button x:Name="BtnCountStop" Content="停止" HorizontalAlignment="Left" Height="47" Margin="629,239,0,0" VerticalAlignment="Top" Width="101" FontSize="16" Background="Red" FontWeight="Bold" Click="BtnCountStop_Click"/>
+                    <Button x:Name="BtnCountPause" Content="暫停" HorizontalAlignment="Left" Height="47" Margin="629,170,0,0" VerticalAlignment="Top" Width="101" FontSize="16" Background="#FFFFEE00" FontWeight="Bold" Click="BtnCountPause_Click"/>
+                    <MediaElement x:Name="MeCountDown" HorizontalAlignment="Left" Height="79" Margin="73,295,0,0" VerticalAlignment="Top" Width="82" Source="alert.wav" Volume="1"/>
                 </Grid>
             </TabItem>
         </TabControl>

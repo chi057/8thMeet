@@ -22,17 +22,20 @@ namespace _8thMeet
     /// </summary>
     public partial class MainWindow : Window
     {
-        // 時鐘
+        // 時鐘 清單和宣告
         List<string> hours = new List<string>();
         List<string> minutes = new List<string>();
         DispatcherTimer timer = new DispatcherTimer();
         string strSelectTime = "";
         DispatcherTimer timerAlert = new DispatcherTimer();
-        //碼表
+        //碼表 清單和宣告
         List<string> StopWatchLog = new List<string>();
         DispatcherTimer timerStopWatch = new DispatcherTimer();
         Stopwatch sw = new Stopwatch();
-
+        //倒數計時 清單和宣告
+        DispatcherTimer timerCountDown = new DispatcherTimer();
+        bool isCountDownReset = true;
+        TimeSpan ts;
         public MainWindow()
         {
             InitializeComponent();
@@ -43,18 +46,30 @@ namespace _8thMeet
                 minutes.Add(string.Format("{0:00}", i));
             CmbHour.ItemsSource = hours;
             CmbMin.ItemsSource = minutes;
-
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += new EventHandler(Timer_tick);
             timer.Start();
             timerAlert.Interval = TimeSpan.FromSeconds(1);
             timerAlert.Tick += new EventHandler(TimerAlert_tick);
             MeSound.LoadedBehavior = MediaState.Stop;
+
             //碼表
             timerStopWatch.Interval = TimeSpan.FromMilliseconds(1);
             timerStopWatch.Tick += new EventHandler(timerStopWatch_tick);
+
+            //倒數計時
+            CmbCountHour.ItemsSource = hours;
+            CmbCountMin.ItemsSource = minutes;
+            CmbCountSecond.ItemsSource = minutes;
+            CmbCountHour.SelectedIndex = -1;
+            CmbCountMin.SelectedIndex = -1;
+            CmbCountSecond.SelectedIndex = -1;
+            timerCountDown.Interval = TimeSpan.FromSeconds(1);
+            timerCountDown.Tick += new EventHandler(timerCountDown_tick);
+            MeCountDown.LoadedBehavior = MediaState.Stop;
         }
-        //時鐘
+
+        //時鐘 每一秒執行一次
         private void Timer_tick(object sender, EventArgs e)
         {
             TxtTime.Text = DateTime.Now.ToString("HH:mm:ss");  
@@ -69,10 +84,22 @@ namespace _8thMeet
                 timerAlert.Stop();
             }
         }
-        //碼表
+        //碼表 每毫秒執行一次
         private void timerStopWatch_tick(object sender, EventArgs e)
         {
             TxtStopWatch.Text = sw.Elapsed.ToString("hh':'mm':'ss':'fff");
+        }
+        //倒數計時 每一秒執行一次
+        private void timerCountDown_tick(object sender, EventArgs e)
+        {
+            TxtCountDown.Text = ts.ToString("hh':'mm':'ss");
+            ts = ts.Subtract(TimeSpan.FromSeconds(1));
+
+            if (TxtCountDown.Text == "00:00:00")
+            {
+                MeCountDown.LoadedBehavior = MediaState.Play;
+                timerCountDown.Stop();
+            }
         }
         private void BtnSetAlert_Click(object sender, RoutedEventArgs e)
         {
@@ -155,6 +182,34 @@ namespace _8thMeet
         {
             MeSound.Position = new TimeSpan(0, 0, 1);
             MeSound.LoadedBehavior = MediaState.Play;
+        }
+
+        private void BtnCountStart_Click(object sender, RoutedEventArgs e)
+        {
+            if (isCountDownReset == true)
+            {
+                int Hour = int.Parse(CmbCountHour.SelectedItem.ToString());
+                int Min = int.Parse(CmbCountMin.SelectedItem.ToString());
+                int Sec = int.Parse(CmbCountSecond.SelectedItem.ToString());
+                ts = new TimeSpan(Hour, Min, Sec);
+            }
+            isCountDownReset = false;
+            timerCountDown.Start();
+        }
+        private void BtnCountPause_Click(object sender, RoutedEventArgs e)
+        {
+
+            timerCountDown.Stop();
+        }
+        private void BtnCountStop_Click(object sender, RoutedEventArgs e)
+        {
+            MeCountDown.LoadedBehavior = MediaState.Stop;
+            isCountDownReset = true;
+            timerCountDown.Stop();
+            TxtCountDown.Text = "00:00:00";
+            CmbCountHour.SelectedIndex = -1;
+            CmbCountMin.SelectedIndex = -1;
+            CmbCountSecond.SelectedIndex = -1;
         }
     }
 }
